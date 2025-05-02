@@ -1,0 +1,257 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNS-Bold;\f1\fnil\fcharset0 .SFNS-Regular;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+\f3\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh18400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs40 \cf2 Cerinte:\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+
+\f1\b0\fs38 \cf2 1.	
+\f2\b \cf2 Separarea codului \'een fi\uc0\u537 iere header (.h sau .hpp) \u537 i surse (.cpp)
+\f1\b0 \cf2 :\
+	\'95	Clasele mici \uc0\u537 i legate \'eentre ele se pot afla \'een aceea\u537 i pereche de fi\u537 iere header-surs\u259 .\
+	\'95	
+\f2\b \cf2 F\uc0\u259 r\u259  using namespace std
+\f1\b0 \cf2 .\
+	2.	
+\f2\b \cf2 Mo\uc0\u537 teniri
+\f1\b0 \cf2 :\
+	\'95	Minim 
+\f2\b \cf2 o clas\uc0\u259  de baz\u259 
+\f1\b0 \cf2  \uc0\u537 i 
+\f2\b \cf2 3 clase derivate
+\f1\b0 \cf2  din aceea\uc0\u537 i ierarhie.\
+	\'95	Ierarhia trebuie s\uc0\u259  fie cu 
+\f2\b \cf2 baz\uc0\u259  proprie
+\f1\b0 \cf2 , nu derivat\uc0\u259  dintr-o clas\u259  predefinit\u259 .\
+	3.	
+\f2\b \cf2 Func\uc0\u539 ii virtuale (pure)
+\f1\b0 \cf2 :\
+	\'95	Minim 
+\f2\b \cf2 o func\uc0\u539 ie virtual\u259 
+\f1\b0 \cf2  specific\uc0\u259  temei (nu func\u539 ii simple de citire/afi\u537 are sau preluate din biblioteci, cum ar fi 
+\f3 \cf2 draw
+\f1 \cf2 , 
+\f3 \cf2 update
+\f1 \cf2 , 
+\f3 \cf2 render
+\f1 \cf2 ).\
+	\'95	Func\uc0\u539 iile virtuale vor fi apelate prin 
+\f2\b \cf2 pointeri la clasa de baz\uc0\u259 
+\f1\b0 \cf2 .\
+	\'95	
+\f2\b \cf2 Pointerii la clasa de baz\uc0\u259 
+\f1\b0 \cf2  vor fi atribute ale altei clase, 
+\f2\b \cf2 nu doar pointeri/referin\uc0\u539 e \'een main
+\f1\b0 \cf2 .\
+	4.	
+\f2\b \cf2 Constructori virtuali (clone)
+\f1\b0 \cf2 :\
+	\'95	Constructorii virtuali sunt necesari, dar 
+\f2\b \cf2 nu se consider\uc0\u259  func\u539 ii specifice temei
+\f1\b0 \cf2 .\
+	5.	
+\f2\b \cf2 Apelarea constructorului din clasa de baz\uc0\u259  din constructorii din derivate
+\f1\b0 \cf2 .\
+	6.	
+\f2\b \cf2 Clas\uc0\u259  cu atribut de tip pointer la o clas\u259  de baz\u259  cu derivate
+\f1\b0 \cf2 :\
+	\'95	Apela\uc0\u539 i func\u539 iile virtuale prin 
+\f2\b \cf2 pointer de baz\uc0\u259 
+\f1\b0 \cf2 , eventual prin 
+\f2\b \cf2 interfa\uc0\u539 a non-virtual\u259  din baz\u259 
+\f1\b0 \cf2 .\
+	7.	
+\f2\b \cf2 Suprascrierea operatorilor de copiere/atribuire (copy/assignment)
+\f1\b0 \cf2 :\
+	\'95	Implementa\uc0\u539 i corect opera\u539 iile de copiere \u537 i atribuire utiliz\'e2nd 
+\f2\b \cf2 copy and swap
+\f1\b0 \cf2 .\
+	8.	
+\f2\b \cf2 Downcasting
+\f1\b0 \cf2 :\
+	\'95	Utiliza\uc0\u539 i 
+\f2\b \cf2 dynamic_cast
+\f1\b0 \cf2  sau 
+\f2\b \cf2 std::dynamic_pointer_cast
+\f1\b0 \cf2  pentru downcast cu sens.\
+	9.	
+\f2\b \cf2 Smart pointers
+\f1\b0 \cf2 :\
+	\'95	Este recomandat s\uc0\u259  folosi\u539 i 
+\f2\b \cf2 smart pointers
+\f1\b0 \cf2  (de exemplu, 
+\f3 \cf2 std::unique_ptr
+\f1 \cf2 , 
+\f3 \cf2 std::shared_ptr
+\f1 \cf2 ).\
+	10.	
+\f2\b \cf2 Excep\uc0\u539 ii
+\f1\b0 \cf2 :\
+	\'95	O ierarhie proprie de excep\uc0\u539 ii derivat\u259  din 
+\f2\b \cf2 std::exception
+\f1\b0 \cf2 .\
+	\'95	Minim 
+\f2\b \cf2 3 clase pentru erori specifice distincte
+\f1\b0 \cf2 .\
+	\'95	Clasele de excep\uc0\u539 ii trebuie s\u259  trateze 
+\f2\b \cf2 categorii de erori distincte
+\f1\b0 \cf2  (exemplu: citire fi\uc0\u537 iere cu diverse extensii).\
+	\'95	Utilizare corect\uc0\u259  a excep\u539 iilor:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f2\b \cf2 throw \'een constructori
+\f1\b0 \cf2 .\
+	\'95	
+\f2\b \cf2 try/catch \'een main
+\f1\b0 \cf2 .\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	11.	
+\f2\b \cf2 Func\uc0\u539 ii \u537 i atribute statice
+\f1\b0 \cf2 :\
+	\'95	Defini\uc0\u539 i 
+\f2\b \cf2 func\uc0\u539 ii \u537 i atribute statice
+\f1\b0 \cf2  acolo unde este cazul.\
+	12.	
+\f2\b \cf2 STL (Standard Template Library)
+\f1\b0 \cf2 :\
+	\'95	Utiliza\uc0\u539 i c\'e2t mai mult posibil STL pentru colec\u539 ii de date \u537 i func\u539 ii utile.\
+	13.	
+\f2\b \cf2 C\'e2t mai multe const
+\f1\b0 \cf2 :\
+	\'95	Preferabil s\uc0\u259  folosi\u539 i 
+\f2\b \cf2 const
+\f1\b0 \cf2  acolo unde este posibil pentru a proteja variabilele de modificare.\
+	14.	
+\f2\b \cf2 Func\uc0\u539 ii de nivel \'eenalt
+\f1\b0 \cf2 :\
+	\'95	Evita\uc0\u539 i 
+\f2\b \cf2 getters/setters
+\f1\b0 \cf2  \uc0\u537 i func\u539 ii de 
+\f2\b \cf2 low-level
+\f1\b0 \cf2 . Folosi\uc0\u539 i func\u539 ii de 
+\f2\b \cf2 nivel \'eenalt
+\f1\b0 \cf2  care rezolv\uc0\u259  problemele direct.\
+CLASE:\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	1.	
+\f2\b Joc
+\f1\b0 :\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Clasa principal\uc0\u259  care reprezint\u259  jocul. Contine logica de generare a codului secret \u537 i gestionarea regulilor de feedback \'een func\u539 ie de nivelul de dificultate.\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Genereaz\uc0\u259  un cod secret de 4 cifre.\
+	\'95	Permite utilizatorului s\uc0\u259  fac\u259  \'eencerc\u259 ri pentru a ghici codul secret.\
+	\'95	Dup\uc0\u259  fiecare \'eencercare, se ofer\u259  feedback \'een func\u539 ie de num\u259 rul de cifre corecte \u537 i pozi\u539 ia acestora.\
+	\'95	Joac\uc0\u259  o rund\u259  sau termin\u259  jocul atunci c\'e2nd num\u259 rul maxim de \'eencerc\u259 ri este atins.\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	2.	
+\f2\b RegulaFeedback
+\f1\b0 :\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	O clas\uc0\u259  de tip abstract, care define\u537 te comportamentul general al feedback-ului pentru fiecare nivel de dificultate.\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f3 feedback()
+\f1 : Ofer\uc0\u259  feedback pentru \'eencercarea f\u259 cut\u259  pe baza codului secret \u537 i a \'eencerc\u259 rii juc\u259 torului.\
+	\'95	
+\f3 clone()
+\f1 : Permite clonarea unui obiect al unei clase derivate.\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	3.	
+\f2\b Usor
+\f1\b0  (Derivat\uc0\u259  din 
+\f3 RegulaFeedback
+\f1 ):\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Regula de feedback pentru nivelul u\uc0\u537 or, care ofer\u259  feedback despre num\u259 rul de cifre corecte \u537 i pozi\u539 ia lor corect\u259 .\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Implementarea feedback-ului bazat pe corectitudinea \uc0\u537 i pozi\u539 ia cifrelor.\
+	\'95	
+\f3 clone()
+\f1 : Clonarea unui obiect de tip 
+\f3 RegulaUsor
+\f1 .\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	4.	
+\f2\b Mediu
+\f1\b0  (Derivat\uc0\u259  din 
+\f3 RegulaFeedback
+\f1 ):\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Regula de feedback pentru nivelul mediu, care ofer\uc0\u259  feedback doar despre num\u259 rul de cifre corecte pe pozi\u539 ii corecte.\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Implementarea feedback-ului pe baza corectitudinii pozi\uc0\u539 iei cifrelor.\
+	\'95	
+\f3 clone()
+\f1 : Clonarea unui obiect de tip 
+\f3 RegulaMediu
+\f1 .\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	5.	
+\f2\b Greu
+\f1\b0  (Derivat\uc0\u259  din 
+\f3 RegulaFeedback
+\f1 ):\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Regula de feedback pentru nivelul greu, care nu ofer\uc0\u259  un feedback detaliat despre corectitudinea pozi\u539 iilor, ci doar un mesaj c\u259  feedback-ul este indisponibil la acest nivel.\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	
+\f3 clone()
+\f1 : Clonarea unui obiect de tip 
+\f3 RegulaGreu
+\f1 .\
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	6.	
+\f2\b Jucator
+\f1\b0 :\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Reprezint\uc0\u259  un juc\u259 tor care particip\u259  la joc, incluz\'e2nd numele \u537 i scorul.\
+	\'95	Func\uc0\u539 ionalit\u259 \u539 i:\
+\pard\tqr\tx900\tx1060\li1060\fi-1060\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Permite crearea unui juc\uc0\u259 tor cu un scor \u537 i un nume specificate.\
+	\'95	Suport\uc0\u259  calcularea scorului final pe baza num\u259 rului de \'eencerc\u259 ri.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs40 \cf2 Func\uc0\u539 ionalitatea jocului:
+\f1\b0\fs38 \
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	Jocul \'eencepe prin alegerea unui nivel de dificultate: u\uc0\u537 or, mediu sau greu. Aceste nivele sunt implementate prin clasele 
+\f3 Usor
+\f1 , 
+\f3 Mediu
+\f1  \uc0\u537 i 
+\f3 Greu
+\f1 .\
+	\'95	Juc\uc0\u259 torul \'eencearc\u259  s\u259  ghiceasc\u259  codul secret, oferindu-i feedback dup\u259  fiecare \'eencercare.\
+	\'95	
+\f2\b Nivelul u\uc0\u537 or
+\f1\b0 : Ofer\uc0\u259  feedback detaliat despre cifrele corecte \u537 i pozi\u539 iile corecte/gre\u537 ite.\
+	\'95	
+\f2\b Nivelul mediu
+\f1\b0 : Ofer\uc0\u259  feedback doar despre cifrele corecte \u537 i pozi\u539 iile corecte.\
+	\'95	
+\f2\b Nivelul greu
+\f1\b0 : Nu ofer\uc0\u259  feedback detaliat, doar un mesaj c\u259  feedback-ul este indisponibil.\
+	\'95	
+\f2\b Scorul
+\f1\b0 : Dup\uc0\u259  ce juc\u259 torul ghice\u537 te codul, jocul atribuie un scor \'eentre 1 \u537 i 10 \'een func\u539 ie de c\'e2te \'eencerc\u259 ri a folosit pentru a ghici corect codul secret. De exemplu, dac\u259  ghice\u537 te din prima, scorul va fi 10, iar dac\u259  folose\u537 te mai multe \'eencerc\u259 ri, scorul va sc\u259 dea.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs40 \cf2 Fluxul jocului:
+\f1\b0\fs38 \
+\pard\tqr\tx340\tx500\li500\fi-500\sl324\slmult1\sb240\partightenfactor0
+\cf2 	1.	Jocul \'eencepe cu alegerea unui nivel de dificultate.\
+	2.	Juc\uc0\u259 torul face \'eencerc\u259 ri de a ghici codul.\
+	3.	Dup\uc0\u259  fiecare \'eencercare, jocul ofer\u259  feedback bazat pe nivelul de dificultate ales.\
+	4.	Dac\uc0\u259  juc\u259 torul ghice\u537 te codul sau dep\u259 \u537 e\u537 te num\u259 rul maxim de \'eencerc\u259 ri, jocul se \'eencheie \u537 i i se afi\u537 eaz\u259  scorul.}

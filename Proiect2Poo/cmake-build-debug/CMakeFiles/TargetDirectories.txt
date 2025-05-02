@@ -1,0 +1,3 @@
+/Users/teo/Desktop/Proiect2Poo/cmake-build-debug/CMakeFiles/Proiect2Poo.dir
+/Users/teo/Desktop/Proiect2Poo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/teo/Desktop/Proiect2Poo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
